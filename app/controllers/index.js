@@ -2,9 +2,9 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
-  isDisabled: true,
-
   emailAddress: '',
+
+  isDisabled: Ember.computed.empty('emailAddress'),
 
   actualEmailAddress: Ember.computed('emailAddress', function() {
     console.log('actualEmailAddress function is called: ', this.get('emailAddress'));
