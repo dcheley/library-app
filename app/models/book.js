@@ -1,5 +1,4 @@
 import DS from 'ember-data';
-import Ember from 'ember';
 import Faker from 'faker';
 
 export default DS.Model.extend({
@@ -30,5 +29,5 @@ export default DS.Model.extend({
   _getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
   }
-  
+
 });
