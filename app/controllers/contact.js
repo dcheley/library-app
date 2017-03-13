@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
 
+  responseMessage: '',
   message: '',
 
   isValid: Ember.computed.match('message', /^./),
@@ -11,14 +12,15 @@ export default Ember.Controller.extend({
     sendMessage() {
       const message = this.get('message');
 
-      const newMessage = this.store.createRecord('message', {
+      const newMessage = this.store.createRecord('sentMessage', {
         message: message
       });
 
-    newMessage.save().then((response) => {
-      this.set('responseMessage', `Your message has been sent with the following id: ${response.get('id')}`);
-      this.set('message', '');
+      newMessage.save().then((response) => {
+        this.set('responseMessage', `Your message has been sent with the following id: ${response.get('id')}`);
+        this.set('message', '');
+      });
     }
   }
-
+  
 });
