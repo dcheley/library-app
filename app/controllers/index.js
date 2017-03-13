@@ -10,7 +10,6 @@ export default Ember.Controller.extend({
   isDisabled: Ember.computed.not('isValid'),
 
   actions: {
-
     saveInvitation() {
       const email = this.get('emailAddress');
 

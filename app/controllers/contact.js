@@ -8,10 +8,15 @@ export default Ember.Controller.extend({
   isDisabled: Ember.computed.not('isValid'),
 
   actions: {
-
     sendMessage() {
-      alert(`Your message is being sent: ${this.get('message')}`);
-      this.set('responseMessage', `Following message has been sent: ${this.get('message')}`);
+      const message = this.get('message');
+
+      const newMessage = this.store.createRecord('message', {
+        message: message
+      });
+
+    newMessage.save().then((response) => {
+      this.set('responseMessage', `Your message has been sent with the following id: ${response.get('id')}`);
       this.set('message', '');
     }
   }
