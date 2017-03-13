@@ -4,6 +4,8 @@ This README outlines the details of collaborating on this Ember application.
 
 A simple library app built to learn Emberjs.
 
+##View deployed version: `https://library-app-b9f19.firebaseapp.com`
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
