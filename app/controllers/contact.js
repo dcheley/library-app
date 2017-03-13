@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
     sendMessage() {
       const message = this.get('message');
 
-      const newMessage = this.store.createRecord('sentMessage', {
+      const newMessage = this.store.createRecord('contact', {
         message: message
       });
 
@@ -22,5 +22,5 @@ export default Ember.Controller.extend({
       });
     }
   }
-  
+
 });
