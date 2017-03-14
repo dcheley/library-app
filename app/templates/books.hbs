@@ -63,7 +63,7 @@
               default=book.library
               action='saveLibrary'}}
 
-            <button class="btn btn-danger" {{action 'cancelLibraryEdit'}}>Cancel</button>
+            <button class="btn btn-danger" {{action 'cancelLibraryEdit' book}}>Cancel</button>
 
           {{else}}
             <span {{action 'editLibrary' book}}>{{book.library.name}}</span>
