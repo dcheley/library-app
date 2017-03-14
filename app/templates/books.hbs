@@ -3,17 +3,34 @@
 <table class="table table-bordered table-striped">
   <thead>
     <tr>
+      <th>Author</th>
       <th>Title</th>
       <th>Release Date</th>
-      <th>Author</th>
+      <th>Library</th>
     </tr>
   </thead>
+
   <tbody>
     {{#each model as |book|}}
       <tr>
-        <td>{{book.title}}</td>
+        <td>{{book.author.name}} </td>
+        <td>
+          {{#if book.isEditing}}
+            <form {{action 'saveBook' book on='submit'}} class="form-inline">
+              <div class="input-group">
+                {{input value=book.title class='form-control'}}
+                <div class="input-group-btn">
+                  <button type="submit" class="btn btn-success" disabled={{book.isNotValid}}>Save</button>
+                  <button class="btn btn-danger" {{action 'cancelBookEdit' book}}>Cancel</button>
+                </div>
+              </div>
+            </form>
+          {{else}}
+            <span {{action 'editBook' book}}>{{book.title}}</span>
+          {{/if}}
+        </td>
         <td>{{book.releaseYear}}</td>
-        <td>{{book.author.name}}</td>
+        <td>{{book.library.name}}</td>
       </tr>
     {{/each}}
   </tbody>
