@@ -1,4 +1,3 @@
-
 import { isEqual } from 'library-app/helpers/is-equal';
 import { module, test } from 'qunit';
 
@@ -9,4 +8,3 @@ test('it works', function(assert) {
   let result = isEqual([42]);
   assert.ok(result);
 });
-
