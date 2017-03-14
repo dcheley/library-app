@@ -17,7 +17,7 @@ export default Ember.Route.extend({
 
     this._super(controller, books);
 
-    controller.set('authors');
+    controller.set('authors', authors);
     controller.set('libraries', libraries);
   },
 
