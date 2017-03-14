@@ -1,1 +1,5 @@
-{{yield}}
+{{#each libraries as |library|}}
+  <option value={{library.id}} selected={{is-equal library.id default.id}}>
+    {{library.name}}
+  </option>
+{{/each}}
