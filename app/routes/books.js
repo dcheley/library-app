@@ -45,7 +45,7 @@ export default Ember.Route.extend({
       book.set('isAuthorEditing', true);
     },
 
-    cancelEditing(book) {
+    cancelAuthorEdit(book) {
       book.set('isAuthorEditing', false);
       book.rollbackAttributes();
     },
