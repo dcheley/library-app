@@ -6,4 +6,24 @@ export default Ember.Route.extend({
     return this.store.findAll('book');
   },
 
+  actions: {
+    editBook(book) {
+      book.set('isEditing', true);
+    },
+
+    cancelBookEdit(book) {
+      book.set('isEditing', false);
+      book.rollbackAttributes();
+    },
+
+    saveBook(book) {
+      if (book.get('isNotValid')) {
+        return;
+      }
+
+      book.set('isEditing', false);
+      book.save();
+    }
+  }
+
 });
