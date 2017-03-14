@@ -16,8 +16,6 @@ export default DS.Model.extend({
     this.set('name', Faker.company.companyName() + ' Library');
     this.set('address', this._fullAddress());
     this.set('phone', Faker.phone.phoneNumber());
-
-    //If using in chain
     return this;
   },
 
