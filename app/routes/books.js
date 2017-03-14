@@ -41,7 +41,37 @@ export default Ember.Route.extend({
       book.save();
     },
 
-    
+    editAuthor(book) {
+      book.set('isAuthorEditing', true);
+    },
+
+    cancelEditing(book) {
+      book.set('isAuthorEditing', false);
+      book.rollbackAttributes();
+    },
+
+    saveAuthor(author, book) {
+      book.set('author', author);
+      author.save();
+      book.save();
+      book.set('isAuthorEditing', false);
+    },
+
+    editLibrary(book) {
+      book.set('isLibraryEditing', true);
+    },
+
+    cancelLibraryEdit(book) {
+      book.set('isLibraryEditing', false);
+      book.rollbackAttributes();
+    },
+
+    saveLibrary(library, book) {
+      book.set('library', library);
+      library.save();
+      book.save();
+      book.set('isLibraryEditing', false);
+    }
   }
 
 });
