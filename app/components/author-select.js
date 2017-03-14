@@ -8,11 +8,10 @@ export default Ember.Component.extend({
   book: null,
 
   change(event) {
-
     const selectedAuthorId = event.target.value;
     const selectedAuthor = this.get('authors').find((record) => record.id === selectedAuthorId);
 
     this.sendAction('action', selectedAuthor, this.get('book'));
   }
-  
+
 });
