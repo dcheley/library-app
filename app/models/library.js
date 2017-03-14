@@ -12,7 +12,7 @@ export default DS.Model.extend({
 
   isValid: Ember.computed.notEmpty('name'),
 
-  rendomize() {
+  randomize() {
     this.set('name', Faker.company.companyName() + ' Library');
     this.set('address', this._fullAddress());
     this.set('phone', Faker.phone.phoneNumber());
