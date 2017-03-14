@@ -4,9 +4,9 @@ import Faker from 'faker';
 export default Ember.Controller.extend({
   // If you haven't mapped these properties in Route in setupController hook, you can alias them here, for example:
   // libraries: Ember.computed.alias('model.libraries')
-  libraries: [],
-  books: [],
-  authors: [],
+  libraries: Ember.computed.alias('model.libraries'),
+  books: Ember.computed.alias('model.books'),
+  authors: Ember.computed.alias('model.authors'),
 
   actions: {
     generateLibraries(volume) {

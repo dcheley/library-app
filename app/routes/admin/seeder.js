@@ -10,9 +10,4 @@ export default Ember.Route.extend({
     });
   },
 
-  setupController(controller, model) {
-    controller.set('libraries', model.libraries);
-    controller.set('books', model.books);
-    controller.set('authors', model.authors);
-  }
 });
