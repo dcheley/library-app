@@ -78,7 +78,7 @@ export default Ember.Route.extend({
     saveLibrary(library, book) {
       //Again Firebase is buggy, must manually remove previous relation
       book.get('library').then((previousLibrary) => {
-        previousLibrary.get('books').then(previousLibraryBooks) => {
+        previousLibrary.get('books').then((previousLibraryBooks) => {
           previousLibraryBooks.removeObject(book);
           previousLibrary.save();
         });
